@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 08:23:10 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 12:17:20 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/10/08 12:11:44 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/08 12:29:39 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memccpy(void *dest, const void *src, int c, unsigned int n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*ptrd;
-	const char		*ptrs;
+	const unsigned char *ptr;
 
-	ptrd = dest;
-	ptrs = src;
-	while (n > 0 && *ptrs != c)
+	ptr = s;
+	while (*ptr != '\0')
 	{
-		*ptrd = *ptrs;
-		ptrd++;
-		ptrs++;
-		n--;
+		if (*ptr == c)
+			return (ptr);
+		ptr++;
 	}
-	if (*ptrs == c)
-	{
-		*ptrd = *ptrs;
-		return ((void *)++ptrd);
-	}
-	else
-		return (0);
+	return (0);
 }
