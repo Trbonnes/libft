@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/08 08:27:10 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/08 08:39:32 by trbonnes         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int		ft_strlen(const char *str)
 {
 	int i;
@@ -10,10 +22,9 @@ int		ft_strlen(const char *str)
 
 void	*ft_memmove(void *dest, const void *src, unsigned int n)
 {
-	
 	unsigned char	*ptrd;
 	const char		*ptrs;
-	int len;
+	int				len;
 
 	ptrd = dest;
 	ptrs = src;
@@ -21,15 +32,12 @@ void	*ft_memmove(void *dest, const void *src, unsigned int n)
 	{
 		len = ft_strlen(ptrs);
 		len = len - (len - n);
-		while (len >= 0)
-		{
+		while (len-- >= 0)
 			*(ptrd + len) = *(ptrs + len);
-			len--;
-		}
 	}
 	else
 	{
-		while (n > 0)
+		while (n-- > 0)
 		{
 			*ptrd = *ptrs;
 			ptrd++;
