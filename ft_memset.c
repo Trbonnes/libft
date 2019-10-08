@@ -6,19 +6,21 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:57:12 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/07 14:50:52 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:43:49 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned int n)
+#include <stdlib.h>
+
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char *ptr;
 
-	ptr = s;
-	while (n > 0)
+	ptr = b;
+	while (len > 0)
 	{
 		*ptr++ = c;
-		n--;
+		len--;
 	}
-	return (s);
+	return (b);
 }

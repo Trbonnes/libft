@@ -6,27 +6,27 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:26:31 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 15:32:15 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:45:29 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup(const char *s1)
 {
 	int		i;
 	int		size;
 	char	*dest;
 
 	size = 0;
-	while (s[size])
+	while (s1[size])
 		size++;
 	if ((dest = malloc(sizeof(char) * size)) == NULL)
 		return (NULL);
 	i = 0;
-	while (s[i])
+	while (s1[i])
 	{
-		dest[i] = s[i];
+		dest[i] = s1[i];
 		i++;
 	}
 	dest[i] = '\0';

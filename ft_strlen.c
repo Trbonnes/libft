@@ -6,16 +6,18 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:56:28 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 15:28:08 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:53:14 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int		ft_strlen(const char *str)
+#include <stdlib.h>
+
+size_t		ft_strlen(const char *s)
 {
-	unsigned int i;
+	size_t i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
 	return (i);
 }

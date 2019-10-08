@@ -6,18 +6,20 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:08:04 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 14:29:38 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:59:10 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strnstr(const char *haystack, const char *needle, unsigned int len)
+#include <stdlib.h>
+
+char	*strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int		i;
-	int		j;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
 	if (needle[0] == '\0')
-		return (haystack);
+		return ((char *)haystack);
 	while (haystack[i] && i < len)
 	{
 		j = 0;
@@ -26,7 +28,7 @@ char	*strnstr(const char *haystack, const char *needle, unsigned int len)
 			while (haystack[i + j] == needle[j] && (i + j) < len)
 			{
 				if (needle[j + 1] == '\0')
-					return (haystack + i);
+					return ((char *)(haystack + i));
 				j++;
 			}
 		}

@@ -6,16 +6,18 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:51:58 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 08:39:31 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:35:40 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+#include <stdlib.h>
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*ptrd;
 	const char		*ptrs;
 
-	ptrd = dest;
+	ptrd = dst;
 	ptrs = src;
 	while (n > 0)
 	{
@@ -24,5 +26,5 @@ void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 		ptrs++;
 		n--;
 	}
-	return (dest);
+	return (dst);
 }

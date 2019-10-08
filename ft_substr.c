@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 15:01:43 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 16:30:20 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/10/08 15:43:13 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/08 17:00:55 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char *ptr;
+	char *dest;
+	char *ptr;
 
-	ptr = s;
-	while (n > 0)
+	if ((dest = malloc(len)) == NULL)
+		return (NULL);
+	dest[len] = '\0';
+	ptr = dest;
+	s = s + start;
+	while (*s != '\0' && *dest != '\0')
 	{
-		*ptr++ = 0;
-		n--;
+		*dest = *s;
+		dest++;
+		s++;
 	}
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void *ptr;
-
-	if (count == 0 || size == 0)
-		return (NULL);
-	ptr = malloc(size * count);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, count * size);
 	return (ptr);
 }

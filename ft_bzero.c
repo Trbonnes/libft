@@ -6,11 +6,13 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:33:10 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/07 14:50:52 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:29:03 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+#include <stdlib.h>
+
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char *ptr;
 

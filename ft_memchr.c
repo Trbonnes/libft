@@ -6,11 +6,13 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:07:59 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 09:28:14 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:33:41 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const void *s, int c, unsigned int n)
+#include <stdlib.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const char *ptr;
 

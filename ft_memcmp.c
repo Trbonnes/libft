@@ -6,11 +6,13 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:37:50 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 14:24:46 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:34:39 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_memcmp(const void *s1, const void *s2, unsigned int n)
+#include <stdlib.h>
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char *ptr1;
 	const unsigned char *ptr2;

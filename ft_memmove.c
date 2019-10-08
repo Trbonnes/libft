@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 08:27:10 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 08:39:32 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:41:39 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,29 +20,29 @@ int		ft_strlen(const char *str)
 	return (i);
 }
 
-void	*ft_memmove(void *dest, const void *src, unsigned int n)
+void	*ft_memmove(void *dst, const void *src, unsigned int len)
 {
 	unsigned char	*ptrd;
 	const char		*ptrs;
-	int				len;
+	int				n;
 
-	ptrd = dest;
+	ptrd = dst;
 	ptrs = src;
-	if (dest > src)
+	if (dst > src)
 	{
-		len = ft_strlen(ptrs);
-		len = len - (len - n);
-		while (len-- >= 0)
-			*(ptrd + len) = *(ptrs + len);
+		n = ft_strlen(ptrs);
+		n = n - (n - len);
+		while (n-- >= 0)
+			*(ptrd + n) = *(ptrs + n);
 	}
 	else
 	{
-		while (n-- > 0)
+		while (len-- > 0)
 		{
 			*ptrd = *ptrs;
 			ptrd++;
 			ptrs++;
 		}
 	}
-	return (dest);
+	return (dst);
 }
