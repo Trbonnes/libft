@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 12:11:44 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 13:29:16 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/10/08 13:07:16 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/08 13:28:51 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+int		ft_strlen(const char *str)
 {
-	const char *ptr;
+	int i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strrchr(const char *s, int c)
+{
+	const char	*ptr;
+	int			len;
 
 	ptr = s;
-	while (*ptr != '\0')
+	len = ft_strlen(ptr);
+	ptr = ptr + len;
+	while (len >= 0)
 	{
 		if (*ptr == c)
 			return ((char *)ptr);
-		ptr++;
+		ptr--;
+		len--;
 	}
 	return (0);
 }

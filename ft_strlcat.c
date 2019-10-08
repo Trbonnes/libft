@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 12:11:44 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 13:29:16 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/10/08 14:01:06 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/08 14:05:33 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	const char *ptr;
+	unsigned int i;
+	unsigned int j;
+	unsigned int src_len;
 
-	ptr = s;
-	while (*ptr != '\0')
+	i = 0;
+	src_len = 0;
+	while (dest[i] != '\0')
+		i++;
+	while (src[src_len] != '\0')
+		src_len++;
+	if (size <= i)
+		src_len = src_len + size;
+	else
+		src_len = src_len + i;
+	j = 0;
+	while (src[j] != '\0' && i + 1 < size)
 	{
-		if (*ptr == c)
-			return ((char *)ptr);
-		ptr++;
+		dest[i] = src[j];
+		j++;
+		i++;
 	}
-	return (0);
+	dest[i] = '\0';
+	return (src_len);
 }
