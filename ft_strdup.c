@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 09:56:28 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 15:28:08 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/10/08 15:26:31 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/08 15:32:15 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int		ft_strlen(const char *str)
-{
-	unsigned int i;
+#include <stdlib.h>
 
+char	*ft_strdup(const char *s)
+{
+	int		i;
+	int		size;
+	char	*dest;
+
+	size = 0;
+	while (s[size])
+		size++;
+	if ((dest = malloc(sizeof(char) * size)) == NULL)
+		return (NULL);
 	i = 0;
-	while (str[i])
+	while (s[i])
+	{
+		dest[i] = s[i];
 		i++;
-	return (i);
+	}
+	dest[i] = '\0';
+	return (dest);
 }
