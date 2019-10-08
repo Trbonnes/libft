@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 13:52:41 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 14:15:32 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/10/08 14:30:04 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/08 15:00:08 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_atoi(const char *nptr)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int			res;
+	int			neg;
 
-	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0' && j < size - 1)
+	res = 0;
+	neg = 1;
+	while ((*nptr >= 0 && *nptr <= 32) || *nptr >= 127)
+		nptr++;
+	if (*nptr == '-')
 	{
-		dest[i + j] = src[j];
-		j++;
+		neg = -neg;
+		nptr++;
 	}
-	dest[i + j] = '\0';
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
+	else if (*nptr == '+')
+		nptr++;
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		res = (res * 10) + (*nptr - 48);
+		nptr++;
+	}
+	return (res * neg);
 }

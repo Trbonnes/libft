@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 13:52:41 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 14:15:32 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/10/08 14:08:04 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/08 14:29:38 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+char	*strnstr(const char *haystack, const char *needle, unsigned int len)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int		i;
+	int		j;
 
 	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0' && j < size - 1)
+	if (needle[0] == '\0')
+		return (haystack);
+	while (haystack[i] && i < len)
 	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	dest[i + j] = '\0';
-	i = 0;
-	while (src[i])
+		j = 0;
+		if (haystack[i] == needle[j])
+		{
+			while (haystack[i + j] == needle[j] && (i + j) < len)
+			{
+				if (needle[j + 1] == '\0')
+					return (haystack + i);
+				j++;
+			}
+		}
 		i++;
-	return (i);
+	}
+	return (0);
 }
