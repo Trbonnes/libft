@@ -6,16 +6,16 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 10:08:53 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:49:39 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 17:44:07 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
 	if (c >= 65 && c <= 90)
-		return (0);
-	else if (c >= 97 && c <= 122)
-		return (0);
-	else
 		return (1);
+	else if (c >= 97 && c <= 122)
+		return (1);
+	else
+		return (0);
 }
