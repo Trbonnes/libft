@@ -6,13 +6,13 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 16:13:25 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 08:38:53 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:14:37 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t		ft_strlen(const char *s)
+static size_t		ft_strlen(const char *s)
 {
 	size_t i;
 
@@ -22,7 +22,7 @@ size_t		ft_strlen(const char *s)
 	return (i);
 }
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char				*ft_strjoin(char const *s1, char const *s2)
 {
 	char *dest;
 	char *ptr;

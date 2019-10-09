@@ -6,13 +6,13 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 08:41:51 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 10:42:32 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:17:24 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t		ft_strlen(const char *s)
+static size_t		ft_strlen(const char *s)
 {
 	size_t i;
 
@@ -22,7 +22,7 @@ size_t		ft_strlen(const char *s)
 	return (i);
 }
 
-int			ft_scrollup(char const *s1, char const *set)
+int					ft_scrollup(char const *s1, char const *set)
 {
 	int i;
 	int j;
@@ -42,7 +42,7 @@ int			ft_scrollup(char const *s1, char const *set)
 	return (j);
 }
 
-int			ft_scrolldown(char const *s1, char const *set)
+int					ft_scrolldown(char const *s1, char const *set)
 {
 	int i;
 	int k;
@@ -62,7 +62,7 @@ int			ft_scrolldown(char const *s1, char const *set)
 	return (k);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char				*ft_strtrim(char const *s1, char const *set)
 {
 	char	*dest;
 	int		i;

@@ -6,11 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:07:16 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 13:28:51 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:17:05 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(const char *str)
+static int		ft_strlen(const char *str)
 {
 	int i;
 
@@ -20,7 +20,7 @@ int		ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strrchr(const char *s, int c)
+char			*ft_strrchr(const char *s, int c)
 {
 	const char	*ptr;
 	int			len;

@@ -6,11 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 08:27:10 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 16:41:39 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:08:47 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(const char *str)
+static int		ft_strlen(const char *str)
 {
 	int i;
 

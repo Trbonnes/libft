@@ -6,18 +6,18 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:21:00 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 15:27:43 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:13:21 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+static void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
 
-void	ft_putstr_fd(char *s, int fd)
+void		ft_putstr_fd(char *s, int fd)
 {
 	while (*s)
 	{

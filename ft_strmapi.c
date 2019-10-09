@@ -6,13 +6,13 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 14:37:09 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 14:52:58 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:15:44 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t		ft_strlen(const char *s)
+static size_t		ft_strlen(const char *s)
 {
 	size_t i;
 
@@ -22,7 +22,7 @@ size_t		ft_strlen(const char *s)
 	return (i);
 }
 
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char				*str;
 	unsigned int		i;
