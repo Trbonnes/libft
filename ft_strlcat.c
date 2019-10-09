@@ -6,11 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:01:06 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 16:49:38 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:29:52 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

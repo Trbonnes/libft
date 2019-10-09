@@ -6,11 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:43:13 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 17:48:51 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:30:38 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

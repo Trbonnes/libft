@@ -6,9 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:30:04 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 15:00:08 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:27:07 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

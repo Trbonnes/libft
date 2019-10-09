@@ -6,9 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 10:08:53 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 10:27:17 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:27:39 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

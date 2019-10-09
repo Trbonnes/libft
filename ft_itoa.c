@@ -6,11 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 10:58:08 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 14:31:05 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:27:58 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int		ft_size(int tmp, int size)
 {

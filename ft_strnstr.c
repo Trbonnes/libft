@@ -6,11 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:08:04 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 16:59:10 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:30:21 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*strnstr(const char *haystack, const char *needle, size_t len)
 {

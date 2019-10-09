@@ -6,11 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:28:11 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:10:48 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:28:53 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 static void	ft_putchar_fd(char c, int fd)
 {

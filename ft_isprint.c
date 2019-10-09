@@ -6,9 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:59:39 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/08 12:01:01 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:27:53 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
