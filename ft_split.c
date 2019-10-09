@@ -6,11 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 10:43:54 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:29:31 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:54:52 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 int		ft_strcount(char const *s, char c)
 {

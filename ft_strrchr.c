@@ -6,11 +6,9 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:07:16 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:30:27 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:50:39 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 static int		ft_strlen(const char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 08:41:51 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:30:33 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:56:39 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 static size_t		ft_strlen(const char *s)
 {

@@ -6,11 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 08:23:10 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:28:04 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:53:47 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {

@@ -6,15 +6,15 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 08:27:10 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:28:28 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:47:46 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-static int		ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (str[i])
@@ -22,11 +22,11 @@ static int		ft_strlen(const char *str)
 	return (i);
 }
 
-void	*ft_memmove(void *dst, const void *src, unsigned int len)
+void			*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*ptrd;
 	const char		*ptrs;
-	int				n;
+	size_t			n;
 
 	ptrd = dst;
 	ptrs = src;

@@ -6,11 +6,9 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 12:03:43 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:30:46 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:50:21 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {
