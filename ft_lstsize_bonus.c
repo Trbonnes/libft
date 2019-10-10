@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:06:31 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/10 15:20:10 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 16:46:28 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	ft_lstsize(t_list *lst)
 	i = 0;
 	if (lst != 0)
 	{
-		while (lst->next != 0)
+		while (lst != 0)
 		{
-			lst = lst->next;
 			i++;
+			lst = lst->next;
 		}
 	}
 	return (i);

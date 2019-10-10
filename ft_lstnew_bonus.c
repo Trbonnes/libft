@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 12:14:25 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/10 14:30:22 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 16:45:05 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*elem;
+	t_list	*new;
 
-	if ((elem = malloc(sizeof(t_list))) == NULL)
+	if ((new = malloc(sizeof(t_list))) == NULL)
 		return (NULL);
-	if (elem)
+	if (new)
 	{
-		elem->content = content;
-		elem->next = 0;
+		new->content = content;
+		new->next = NULL;
 	}
-	return (elem);
+	return (new);
 }
