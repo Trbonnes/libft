@@ -6,29 +6,36 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:52:41 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:55:57 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 10:57:33 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+static int	ft_strlen(const char *str)
 {
-	size_t	i;
-	size_t	j;
+	int i;
 
 	i = 0;
-	while (dst[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0' && j < dstsize - 1)
+	while (str[i] != '\0')
 	{
-		dst[i + j] = src[j];
-		j++;
-	}
-	dst[i + j] = '\0';
-	i = 0;
-	while (src[i])
 		i++;
+	}
 	return (i);
+}
+
+size_t		ft_strlcpy(char *dest, const char *src, size_t n)
+{
+	unsigned int i;
+
+	i = 0;
+	while (i < n - 1 && src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	if (n == 0)
+		dest[0] = '\0';
+	return (ft_strlen(src));
 }
