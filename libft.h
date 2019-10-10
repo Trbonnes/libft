@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/10 12:00:44 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/10 12:01:44 by trbonnes         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
-#	define LIBFT_H
-#	include <unistd.h>
-#	include <stdlib.h>
+# define LIBFT_H
+# include <unistd.h>
+# include <stdlib.h>
 
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);

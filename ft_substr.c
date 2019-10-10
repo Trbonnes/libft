@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:43:13 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 17:09:42 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 11:20:43 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char *ptr;
 	char *src;
 
-	if ((dest = malloc(len)) == NULL)
+	if ((dest = malloc(len + 1)) == NULL)
 		return (NULL);
 	dest[len] = '\0';
 	ptr = dest;
