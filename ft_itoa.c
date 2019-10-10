@@ -6,13 +6,13 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 10:58:08 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:53:31 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 08:13:49 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_size(int tmp, int size)
+static int	ft_size(int tmp, int size)
 {
 	while (tmp > 0)
 	{
@@ -22,7 +22,7 @@ int		ft_size(int tmp, int size)
 	return (size);
 }
 
-char	*ft_zero(void)
+static char	*ft_zero(void)
 {
 	char	*str;
 
@@ -33,7 +33,7 @@ char	*ft_zero(void)
 	return (str);
 }
 
-char	*ft_fullup(int tmp, int size, int neg, int n)
+static char	*ft_fullup(int tmp, int size, int neg, int n)
 {
 	char	*str;
 	int		i;
@@ -59,7 +59,7 @@ char	*ft_fullup(int tmp, int size, int neg, int n)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*str;
 	int		neg;

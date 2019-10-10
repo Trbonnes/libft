@@ -6,45 +6,28 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 08:27:10 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:47:46 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 10:00:34 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static size_t	ft_strlen(const char *str)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
+	unsigned char			*ptrd;
+	const unsigned char		*ptrs;
+	size_t					i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-void			*ft_memmove(void *dst, const void *src, size_t len)
-{
-	unsigned char	*ptrd;
-	const char		*ptrs;
-	size_t			n;
-
-	ptrd = dst;
-	ptrs = src;
+	ptrd = (unsigned char *)dst;
+	ptrs = (unsigned char *)src;
+	i = -1;
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	if (dst > src)
-	{
-		n = ft_strlen(ptrs);
-		n = n - (n - len);
-		while (n-- >= 0)
-			*(ptrd + n) = *(ptrs + n);
-	}
+		while (++i <= len)
+			*(ptrd + (len - i)) = *(ptrs + (len - i));
 	else
-	{
 		while (len-- > 0)
-		{
-			*ptrd = *ptrs;
-			ptrd++;
-			ptrs++;
-		}
-	}
+			*(ptrd++) = *(ptrs++);
 	return (dst);
 }

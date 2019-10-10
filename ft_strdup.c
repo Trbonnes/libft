@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:26:31 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:55:19 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 09:28:31 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s1)
 	size = 0;
 	while (s1[size])
 		size++;
-	if ((dest = malloc(sizeof(char) * size)) == NULL)
+	if ((dest = malloc(sizeof(char) * size + 1)) == NULL)
 		return (NULL);
 	i = 0;
 	while (s1[i])

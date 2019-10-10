@@ -6,13 +6,13 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 10:43:54 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 17:11:10 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 08:13:40 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strcount(char const *s, char c)
+static int	ft_strcount(char const *s, char c)
 {
 	int		count;
 	int		i;
@@ -28,7 +28,7 @@ int		ft_strcount(char const *s, char c)
 	return (count);
 }
 
-int		*ft_sizeeach(char const *s, char c)
+static int	*ft_sizeeach(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -50,14 +50,14 @@ int		*ft_sizeeach(char const *s, char c)
 	return (size);
 }
 
-char	*ft_lock(char *str, int size)
+static char	*ft_lock(char *str, int size)
 {
 	if (!(str = malloc(sizeof(char) * size)))
 		return (NULL);
 	return (str);
 }
 
-char	**ft_globallock(int size)
+static char	**ft_globallock(int size)
 {
 	char **str;
 
@@ -66,7 +66,7 @@ char	**ft_globallock(int size)
 	return (str);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	**dest;
 	int		*size;

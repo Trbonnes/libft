@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 12:11:44 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:50:59 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 09:32:47 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)ptr);
 		ptr++;
 	}
+	if (c == 0)
+		return ((char *)ptr);
 	return (0);
 }

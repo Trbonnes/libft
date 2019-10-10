@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 08:41:51 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:56:39 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 10:10:23 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static size_t		ft_strlen(const char *s)
 	return (i);
 }
 
-int					ft_scrollup(char const *s1, char const *set)
+static int			ft_scrollup(char const *s1, char const *set)
 {
 	int i;
 	int j;
@@ -42,7 +42,7 @@ int					ft_scrollup(char const *s1, char const *set)
 	return (j);
 }
 
-int					ft_scrolldown(char const *s1, char const *set)
+static int			ft_scrolldown(char const *s1, char const *set)
 {
 	int i;
 	int k;
@@ -69,6 +69,8 @@ char				*ft_strtrim(char const *s1, char const *set)
 	int		j;
 	int		k;
 
+	if (s1 == NULL)
+		return (NULL);
 	dest = malloc(sizeof(char) * ft_strlen(s1) + 1);
 	if (dest == NULL)
 		return (NULL);
