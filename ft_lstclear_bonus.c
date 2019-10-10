@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:39:39 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/10 14:30:27 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 15:25:35 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list *tmp;
-	t_list *del;
+	t_list *supp;
 
 	tmp = *lst;
-	if (tmp == 0 || del == 0)
+	if (lst == NULL || del == NULL)
 		return ;
 	while (tmp != 0)
 	{
 		(*del)(tmp->content);
-		del = tmp;
-		free(del);
+		supp = tmp;
+		free(supp);
 		tmp = tmp->next;
 	}
 	lst = 0;

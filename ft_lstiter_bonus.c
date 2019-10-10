@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:44:59 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/10 14:30:26 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 15:18:53 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	t_list *tmp;
 
 	tmp = lst;
-	if (lst == 0 || f == 0)
+	if (lst == NULL || f == NULL)
 		return ;
 	while (tmp != 0)
 	{

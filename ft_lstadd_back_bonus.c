@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:19:29 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/10 14:30:30 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/10 15:17:59 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	t_list *tmp;
 
 	tmp = *alst;
+	if (alst == NULL || new == NULL)
+		return ;
 	if (tmp != 0)
 	{
 		while (tmp->next != 0)
