@@ -23,11 +23,13 @@ ${NAME}:	${SRCS} libft.h
 			${CC} ${CFLAGS} -I${INCLUDES} -c ${SRCS}
 			${LINK} ${NAME} ${OBJS}
 
+${NAME_B}:	${SRCS_B} libft_bonus.h
+			${CC} ${CFLAGS} -I${INCLUDES_B} -c ${SRCS_B}
+			${LINK} ${NAME_B} ${OBJ_B}
+
 all:	${NAME}
 
-bonus:	${SRCS_B} libft_bonus.h
-		${CC} ${CFLAGS} -I${INCLUDES_B} -c ${SRCS_B}
-		${LINK} ${NAME_B} ${OBJ_B}
+bonus:	${NAME_B}
 		
 clean:
 		rm -f ${OBJS} ${OBJ_B}
