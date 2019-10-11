@@ -40,5 +40,3 @@ re: 	fclean all
 bonus_re : fclean bonus
 
 .PHONY:	all clean fclean re
-
-.PHONY: all clean fclean re

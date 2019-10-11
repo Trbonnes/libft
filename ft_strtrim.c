@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 08:41:51 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/10 10:10:23 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/11 12:18:56 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ static int			ft_scrolldown(char const *s1, char const *set)
 
 char				*ft_strtrim(char const *s1, char const *set)
 {
-	char	*dest;
-	int		i;
-	int		j;
-	int		k;
+	char		*dest;
+	int			i;
+	int			j;
+	int			k;
 
 	if (s1 == NULL)
 		return (NULL);

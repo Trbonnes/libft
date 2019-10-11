@@ -5,92 +5,79 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 10:43:54 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/10 08:13:40 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/10/11 11:54:01 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/11 12:19:48 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int	ft_strcount(char const *s, char c)
+static int	ft_count(char const *str, char c)
 {
-	int		count;
-	int		i;
+	int i;
+	int count;
 
-	count = 0;
 	i = 0;
-	while (s[i])
+	count = 0;
+	if (!str)
+		return (0);
+	while (str[i])
 	{
-		if (i == 0 || (s[i - 1] == c && s[i] != c))
+		while (str[i] == c && str[i])
+			i++;
+		if (str[i] != c && str[i])
 			count++;
-		i++;
+		while (str[i] != c && str[i])
+			i++;
 	}
 	return (count);
 }
 
-static int	*ft_sizeeach(char const *s, char c)
+static int	ft_next(char const *str, char c, int i)
 {
+	if (i == 0 && str[i] != c && str[i])
+		return (i);
+	while (str[i] != c && str[i])
+		i++;
+	while (str[i] == c && str[i])
+		i++;
+	return (i);
+}
+
+static int	ft_length(char const *str, char c, int i)
+{
+	int length;
+
+	length = 0;
+	while (str[i + length] != c && str[i + length])
+		length++;
+	return (length);
+}
+
+char		**ft_split(char const *str, char c)
+{
+	char	**tab;
+	int		count;
+	int		s;
 	int		i;
 	int		j;
-	int		*size;
 
+	count = ft_count(str, c);
+	if (!(tab = malloc(sizeof(char*) * (count + 1))))
+		return (NULL);
 	i = 0;
-	j = 0;
-	size = malloc((sizeof(int)) * ft_strcount(s, c));
-	while (i <= ft_strcount(s, c))
-		size[i++] = 0;
-	while (s[i] != '\0')
+	s = 0;
+	while (i < count && str)
 	{
-		if (s[i] != c)
-			size[j]++;
-		else if (i > 0 && s[i - 1] != c)
-			j++;
+		s = ft_next(str, c, s);
+		j = 0;
+		if (!(tab[i] = malloc(sizeof(char) * ft_length(str, c, s))))
+			return (NULL);
+		while (str[s] != c)
+			tab[i][j++] = str[s++];
+		tab[i][j] = '\0';
 		i++;
 	}
-	return (size);
-}
-
-static char	*ft_lock(char *str, int size)
-{
-	if (!(str = malloc(sizeof(char) * size)))
-		return (NULL);
-	return (str);
-}
-
-static char	**ft_globallock(int size)
-{
-	char **str;
-
-	if (!(str = malloc(sizeof(char) * size)))
-		return (NULL);
-	return (str);
-}
-
-char		**ft_split(char const *s, char c)
-{
-	char	**dest;
-	int		*size;
-	int		i;
-	int		j;
-	int		k;
-
-	dest = ft_globallock(ft_strcount(s, c) + 1);
-	size = ft_sizeeach(s, c);
-	i = -1;
-	j = 0;
-	k = 0;
-	while (s[++i] != '\0')
-	{
-		if (s[i] != c)
-		{
-			if (i == 0 || (s[i] != c && s[i - 1] == c))
-				dest[j] = ft_lock(dest[j], size[j] + 1);
-			dest[j][k] = s[i];
-			dest[j][++k] = '\0';
-		}
-		else if (i > 0 && s[i - 1] != c && ++j)
-			k = 0;
-	}
-	dest[j] = 0;
-	return (dest);
+	tab[i] = 0;
+	return (tab);
 }
