@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:50:01 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/11 18:14:03 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/11 18:50:47 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *))
 		new->content = (*f)(lst->content);
 		lst = lst->next;
 	}
+	new->next = NULL;
 	return (tmp);
 }
