@@ -5,40 +5,34 @@ SRCS =	./ft_atoi.c ./ft_itoa.c ./ft_bzero.c ./ft_calloc.c ./ft_isalnum.c ./ft_is
 
 OBJS =	${SRCS:.c=.o}
 
-INCLUDES =	./libft.h
-
 SRCS_B = ./ft_lstadd_back_bonus.c ./ft_lstdelone_bonus.c ./ft_lstmap_bonus.c ./ft_lstadd_front_bonus.c ./ft_lstiter_bonus.c ./ft_lstnew_bonus.c ./ft_lstclear_bonus.c     ./ft_lstlast_bonus.c      ./ft_lstsize_bonus.c
 
 OBJ_B =	${SRCS_B:.c=.o}
 
-INCLUDES_B =	./libft_bonus.h
+INCLUDES =	./libft.h
 
 NAME =		libft.a
-
-NAME_B =	libft_bonus.a
 
 LINK = ar rcs
 
 ${NAME}:	${SRCS} libft.h
 			${CC} ${CFLAGS} -I${INCLUDES} -c ${SRCS}
-			${LINK} ${NAME} ${OBJS}
-
-${NAME_B}:	${SRCS_B} libft_bonus.h
-			${CC} ${CFLAGS} -I${INCLUDES_B} -c ${SRCS_B}
-			${LINK} ${NAME_B} ${OBJ_B}
+			${LINK} ${NAME} ${OBJS}		
 
 all:	${NAME}
 
-bonus:	${NAME_B}
+bonus:	${SRCS} ${SRCS_B} libft.h
+		${CC} ${CFLAGS} -I${INCLUDES} -c ${SRCS} ${SRCS_B}
+		${LINK} ${NAME} ${OBJS} ${OBJ_B}
 		
 clean:
 		rm -f ${OBJS} ${OBJ_B}
 	
 fclean:	clean
-		rm -f ${NAME} ${NAME_B}
+		rm -f ${NAME}
 
 re: 	fclean all
 
 bonus_re : fclean bonus
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re bonus bonus_re
