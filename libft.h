@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 12:00:44 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/11 17:17:07 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/11 19:03:56 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
+
 typedef	struct		s_list
 {
 	void			*content;
