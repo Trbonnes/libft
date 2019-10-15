@@ -6,29 +6,45 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:43:13 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/10 11:20:43 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/15 15:07:13 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static unsigned int		ft_strlen(char *c)
 {
-	char *dest;
-	char *ptr;
-	char *src;
+	unsigned int i;
 
-	if ((dest = malloc(len + 1)) == NULL)
-		return (NULL);
-	dest[len] = '\0';
-	ptr = dest;
-	src = (char *)s + start;
-	while (*src != '\0' && dest != (ptr + len))
+	i = 0;
+	while (*c++)
+		i++;
+	return (i);
+}
+
+char					*ft_substr(char const *s,
+unsigned int start, size_t len)
+{
+	char	*substr;
+	int		i;
+
+	substr = malloc(sizeof(char) * (len + 1));
+	if (!substr)
+		return (0);
+	if (ft_strlen((char*)s) <= start)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		substr[0] = '\0';
+		return (substr);
 	}
-	*dest = '\0';
-	return (ptr);
+	s += start;
+	i = 0;
+	while (len > 0 && *s)
+	{
+		substr[i] = *s;
+		s++;
+		i++;
+		len--;
+	}
+	substr[i] = 0;
+	return (substr);
 }

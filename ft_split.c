@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:54:01 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/15 14:08:58 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/15 15:55:42 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,13 @@ char		**ft_split(char const *str, char c)
 		return (NULL);
 	i = 0;
 	s = 0;
-	while (i < count && str)
+	while (i < count && str[s])
 	{
 		s = ft_next(str, c, s);
 		j = 0;
 		if (!(tab[i] = malloc(sizeof(char) * (ft_length(str, c, s) + 1))))
 			return (NULL);
-		while (str[s] != c)
+		while (str[s] != c && str[s])
 			tab[i][j++] = str[s++];
 		tab[i][j] = '\0';
 		i++;

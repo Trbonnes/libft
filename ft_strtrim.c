@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 08:41:51 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/11 12:18:56 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/15 15:16:44 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ static int			ft_scrolldown(char const *s1, char const *set)
 	{
 		if (s1[k] == set[i])
 		{
+			if (k - 1 < 0)
+				return (k);
 			k--;
 			i = 0;
 		}
