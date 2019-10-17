@@ -6,20 +6,39 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:50:01 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/11 18:50:47 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/17 16:51:10 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *))
+static void	*ft_delete(t_list **lst, void (*del)(void *))
+{
+	t_list *tmp;
+	t_list *supp;
+
+	if (lst == NULL || del == NULL)
+		return (NULL);
+	tmp = *lst;
+	while (tmp != 0)
+	{
+		(*del)(tmp->content);
+		supp = tmp;
+		tmp = tmp->next;
+		free(supp);
+	}
+	lst = NULL;
+	return (NULL);
+}
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list *tmp;
 	t_list *new;
 
 	if (!(new = malloc(sizeof(t_list))))
 		return (NULL);
-	if (lst == NULL || f == NULL)
+	if (lst == NULL || f == NULL || del == NULL)
 		return (lst);
 	new->content = (*f)(lst->content);
 	tmp = new;
@@ -27,7 +46,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *))
 	while (lst)
 	{
 		if (!(new->next = malloc(sizeof(t_list))))
-			return (NULL);
+			return (ft_delete(&tmp, del));
 		new = new->next;
 		new->content = (*f)(lst->content);
 		lst = lst->next;
