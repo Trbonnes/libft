@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:50:01 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/17 16:52:50 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/17 18:53:38 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list *tmp;
 	t_list *new;
 
-	if (!(new = malloc(sizeof(t_list))))
-		return (NULL);
 	if (lst == NULL || f == NULL || del == NULL)
 		return (lst);
+	if (!(new = malloc(sizeof(t_list))))
+		return (NULL);
 	new->content = (*f)(lst->content);
 	tmp = new;
 	lst = lst->next;
