@@ -6,13 +6,13 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:01:06 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/18 09:14:41 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/18 09:21:09 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static	size_t	ft_strlen(char *str)
+static	size_t	ft_strlen(const char *str)
 {
 	size_t i;
 
@@ -31,7 +31,7 @@ size_t			ft_strlcat(char *dest, const char *src, size_t size)
 	char			*scursor;
 	char			*dcursor;
 
-	scursor = src;
+	scursor = (char *)src;
 	dcursor = dest;
 	i = 0;
 	while (i++ < size && *dcursor != '\0')
