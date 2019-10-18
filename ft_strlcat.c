@@ -6,15 +6,15 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:01:06 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/15 14:59:37 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/18 09:14:41 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static	int		ft_strlen(char *str)
+static	size_t	ft_strlen(char *str)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -24,10 +24,10 @@ static	int		ft_strlen(char *str)
 	return (i);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t			ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	destlen;
-	unsigned		i;
+	size_t			destlen;
+	size_t			i;
 	char			*scursor;
 	char			*dcursor;
 
