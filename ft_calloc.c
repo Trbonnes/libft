@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:01:43 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/18 11:57:40 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/21 09:13:29 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void		*ft_calloc(size_t count, size_t size)
 	ptr = malloc(size * count);
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, count * size);
+	if (ptr)
+		ft_bzero(ptr, count * size);
 	return (ptr);
 }

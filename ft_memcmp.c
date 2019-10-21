@@ -6,28 +6,26 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:37:50 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/10 09:21:35 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/21 08:47:20 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t size)
 {
-	const unsigned char *ptr1;
-	const unsigned char *ptr2;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	ptr1 = s1;
-	ptr2 = s2;
-	if (ptr1 == ptr2 || n == 0)
-		return (0);
-	while (n > 0)
+	i = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (i < size)
 	{
-		if (*ptr1 != *ptr2)
-			return (*ptr1 - *ptr2);
-		ptr1++;
-		ptr2++;
-		n--;
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
 	}
 	return (0);
 }

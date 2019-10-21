@@ -6,28 +6,30 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 08:27:10 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/10 15:44:03 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/21 08:42:30 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char			*ptrd;
-	const unsigned char		*ptrs;
-	size_t					i;
+	char		*d;
+	const char	*s;
+	char		*end_d;
+	const char	*end_s;
 
-	ptrd = (unsigned char *)dst;
-	ptrs = (unsigned char *)src;
-	i = 0;
-	if (dst == NULL && src == NULL)
+	d = dst;
+	s = src;
+	end_d = d + (n - 1);
+	end_s = s + (n - 1);
+	if (dst == 0 && src == 0)
 		return (NULL);
-	if (dst > src)
-		while (++i <= len)
-			ptrd[len - i] = ptrs[len - i];
+	if (d < s)
+		while (n--)
+			*d++ = *s++;
 	else
-		while (len-- > 0)
-			*(ptrd++) = *(ptrs++);
+		while (n--)
+			*end_d-- = *end_s--;
 	return (dst);
 }

@@ -6,34 +6,22 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:07:16 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/09 16:50:39 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/21 08:54:40 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int		ft_strlen(const char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 char			*ft_strrchr(const char *s, int c)
 {
-	const char	*ptr;
-	int			len;
+	const char *end_s;
 
-	ptr = s;
-	len = ft_strlen(ptr);
-	ptr = ptr + len;
-	while (len >= 0)
+	end_s = 0;
+	while (*s)
 	{
-		if (*ptr == c)
-			return ((char *)ptr);
-		ptr--;
-		len--;
+		if (*s == c)
+			end_s = s;
+		s++;
 	}
-	return (0);
+	if (c == 0)
+		return ((char *)s);
+	return ((char *)end_s);
 }

@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:01:06 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/18 09:21:09 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/21 09:05:13 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,37 +18,35 @@ static	size_t	ft_strlen(const char *str)
 
 	i = 0;
 	while (str[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }
 
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
+size_t			ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t			destlen;
-	size_t			i;
-	char			*scursor;
-	char			*dcursor;
+	size_t	i;
+	size_t	len;
+	char	*dest;
+	char	*s;
 
-	scursor = (char *)src;
-	dcursor = dest;
+	s = (char *)src;
+	dest = dst;
 	i = 0;
-	while (i++ < size && *dcursor != '\0')
-		dcursor++;
-	destlen = dcursor - dest;
-	if (size - destlen == 0)
-		return (destlen + ft_strlen(src));
-	i = destlen;
-	while (*scursor != '\0')
+	while (i++ < size && *dest != '\0')
+		dest++;
+	len = dest - dst;
+	if (size - len == 0)
+		return (len + ft_strlen(src));
+	i = len;
+	while (*s != '\0')
 	{
 		if (i++ < size - 1)
 		{
-			*dcursor = *scursor;
-			dcursor++;
+			*dest = *s;
+			dest++;
 		}
-		scursor++;
+		s++;
 	}
-	*dcursor = '\0';
-	return (destlen + scursor - src);
+	*dest = '\0';
+	return (len + s - src);
 }

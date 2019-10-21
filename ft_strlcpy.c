@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:52:41 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/11 09:13:57 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/21 09:02:10 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t		ft_strlcpy(char *dest, const char *src, size_t n)
 
 	i = 0;
 	count = 0;
+	if (!dest || !src)
+		return (0);
 	while (src[count] != '\0')
 		count++;
 	if (n == 0)
@@ -28,6 +30,7 @@ size_t		ft_strlcpy(char *dest, const char *src, size_t n)
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	if (n > 1)
+		dest[i] = '\0';
 	return (count);
 }
